@@ -1,0 +1,5 @@
+Sara Nakamya 2019-01-01 F symptomatic Mary
+Jacob Otim 2019-01-01 F asymptomatic Mary
+Jill Sekajja 2019-01-01 F asymptomatic Mary
+Magret Namata 2019-01-01 F asymptomatic Mary
+Timothy Kibalama 2019-05-25 M symptomatic Mary
