@@ -11,3 +11,4 @@ To start client
     press Enter
 	
 Instructions on how to use the program shall be found when you start it and this must be after starting the server
+Instructions about the server are found in the readme.MD file in the server directory
