@@ -179,6 +179,9 @@ void *processing(void *sock){
                 }
                 if(argsCount == 0){
                     int addCount = countCases(filename);
+          	     if(addCount==-1){
+                        addCount = 0;
+                    }
                     if(fetchFromFile(passedArgs[0], filename)==1){
                         sprintf(server_reply,"Operation successful. The records(%d) were added to target file.\n",
                                 countCases(filename)-addCount);
@@ -258,8 +261,11 @@ int fetchFromFile(char *src_file, char dest_file[]){
     if (src!=NULL&&dest!=NULL){
         while(!feof(src)){
             fscanf(src, "%s%s%s%s%s%s", pips[i].firstname,pips[i].lastname,pips[i].date,pips[i].gender,pips[i].category,pips[i].username);
-            fprintf(dest, "%s %s,%s,%s,%s,%s\n",pips[i].firstname,pips[i].lastname,pips[i].date,pips[i].gender,pips[i].category,pips[i].username);
-            i++;
+            if(strncmp(pips[i].gender,"M",1)||strncmp(pips[i].gender,"F",1)) {
+                fprintf(dest, "%s %s,%s,%s,%s,%s\n", pips[i].firstname, pips[i].lastname, pips[i].date, pips[i].gender,
+                        pips[i].category, pips[i].username);
+                i++;
+            }
         }
         fclose(src);
         fclose(dest);
